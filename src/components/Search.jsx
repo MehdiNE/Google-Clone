@@ -6,7 +6,7 @@ import { Links } from './Links';
 
 export const Search = () => {
   const { setSearchTerm } = useStateContext();
-  const [text, setText] = useState('football');
+  const [text, setText] = useState('Mark Zuckerberg');
   const [debouncedValue] = useDebounce(text, 300);
 
   useEffect(() => {
