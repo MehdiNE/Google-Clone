@@ -1,8 +1,9 @@
 import React from 'react';
-import Loader from 'react-loader-spinner';
+
+import HashLoader from 'react-spinners/ClipLoader';
 
 export const Loading = () => (
   <div className="flex justify-center items-center ">
-    <Loader type="Puff" color="#00BFFF" height={550} width={80} />
+    <HashLoader size={50} />
   </div>
 );

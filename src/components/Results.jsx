@@ -1,19 +1,18 @@
 /* eslint-disable comma-dangle */
-/* eslint-disable quotes */
-import React, { useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import ReactPlayer from "react-player";
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import ReactPlayer from 'react-player';
 
-import { useStateContext } from "../contexts/StateContextProvider";
-import { Loading } from "./Loading";
+import { useStateContext } from '../contexts/StateContextProvider';
+import { Loading } from './Loading';
 
 export const Results = () => {
   const { results, loading, getResults, searchTerm } = useStateContext();
   const location = useLocation();
 
   useEffect(() => {
-    if (searchTerm !== "") {
-      if (location.pathname === "/videos") {
+    if (searchTerm !== '') {
+      if (location.pathname === '/videos') {
         getResults(`/search/q=${searchTerm} videos`);
       } else {
         getResults(`${location.pathname}/q=${searchTerm}&num=20`);
@@ -24,7 +23,7 @@ export const Results = () => {
   if (loading) return <Loading />;
 
   switch (location.pathname) {
-    case "/search":
+    case '/search':
       return (
         <div className="sm:px-56 flex flex-wrap justify-between space-y-6">
           {results?.results?.map(({ link, title }, index) => (
@@ -41,7 +40,7 @@ export const Results = () => {
           ))}
         </div>
       );
-    case "/image":
+    case '/image':
       return (
         <div className="flex flex-wrap justify-center items-center">
           {results?.image_results?.map(
@@ -60,7 +59,7 @@ export const Results = () => {
           )}
         </div>
       );
-    case "/news":
+    case '/news':
       return (
         <div className="sm:px-56 flex flex-wrap justify-between items-center space-y-6">
           {results?.entries?.map(({ id, links, source, title }) => (
@@ -82,7 +81,7 @@ export const Results = () => {
                   rel="noreferrer"
                   className="hover:underline hover:text-blue-300"
                 >
-                  {" "}
+                  {' '}
                   {source?.href}
                 </a>
               </div>
@@ -90,7 +89,7 @@ export const Results = () => {
           ))}
         </div>
       );
-    case "/videos":
+    case '/videos':
       return (
         <div className="flex flex-wrap ">
           {results?.results?.map((video, index) => (
@@ -106,6 +105,6 @@ export const Results = () => {
         </div>
       );
     default:
-      return "Error...";
+      return 'Error...';
   }
 };
