@@ -3,8 +3,8 @@
 # live demo
 You can see the website [HERE](https://googlebymahdi.netlify.app/search).
 
-![Google](https://imgur.com/2IgMk9t)
-![Google](https://imgur.com/n6bjPfu)
+![Google](https://i.imgur.com/2IgMk9t.png)
+![Google](https://i.imgur.com/n6bjPfu.png)
 
 ## Introduction
 
